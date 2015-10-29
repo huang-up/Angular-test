@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>User Login and Sessions </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="form-container" ng-controller="myController">
+      <p class="form-header">User Profile</p>
+      <form method="post" action="/user/update">
+        <label>Username:</label>
+          <input type="text" name="username" ng-model="user.username" disabled ><br/><br/>
+        <label>Email:</label>
+          <input type="text" name="email" ng-model="user.email" ><br/><br/>
+        <label>Favorite Color:</label>
+          <input type="text" name="color" ng-model="user.color" ><br/><br/>
+        
+        <input type="submit" value= "Save" />
+      </form>
+    </div>
+    <form method="post" action="/user/delete">
+      <input type="submit" value="Delete User" />
+    </form>
+    <hr><%= msg %>
+    <hr>{{error}}
+    <!--  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>  -->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script src="/javascripts/my_app.js"></script>
+  </body>
+</html>
